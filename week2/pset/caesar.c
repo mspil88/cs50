@@ -21,6 +21,7 @@ int main(int argc, string argv[]) {
         printf("Looks good, the key is %s\n", argv[1]);
         key = atoi(argv[1]);
 
+
     }
 
     string plaintext = get_string("Pass in your text to be enciphered: \n");
@@ -39,4 +40,5 @@ int main(int argc, string argv[]) {
 
 
 } printf("\n");
+  return 0;
 }
