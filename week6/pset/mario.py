@@ -1,5 +1,5 @@
-def mario(height):
-    '''Returns a staircase based on a heigh parameter
+def mario():
+    '''Returns a staircase based on a height parameter specified by the user
     
         e.g. given height = 10 the function will return:
         
@@ -15,7 +15,14 @@ def mario(height):
         ##########
         
     '''
-    height = dec = height
+    while True:
+        height = int(input("Height: "))
+        if height < 1 or height > 8:
+            print("Invalid intput")
+        else:
+            break    
+    
+    dec = height
     inc = 0
     
     for i in range(height):
