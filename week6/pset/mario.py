@@ -1,7 +1,7 @@
 def mario():
     '''Returns a staircase based on a height parameter specified by the user
     
-        e.g. given height = 10 the function will return:
+        e.g. given height = 8 the function will return:
         
                  #
                 ##
@@ -11,8 +11,7 @@ def mario():
             ######
            #######
           ########
-         #########
-        ##########
+
         
     '''
     while True:
