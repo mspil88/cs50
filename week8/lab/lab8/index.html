@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+           function button_color(btn, new_color) {
+               var og_color = document.getElementById(btn).style.color;
+               document.getElementById(btn).style.backgroundColor = new_color;
+               //not working
+               setTimeout(function(){
+                   document.getElementById(btn).style.color = og_color;},3000);
+               }
+
+            function check_answer() {
+                var answer = document.getElementById("answer");
+                if (answer.value.toLowerCase() == "brazil" || answer.value.toLowerCase() == "brasil") {
+                    answer.style.backgroundColor = "#90ee90";
+                } else {
+                    answer.style.backgroundColor = "#ffcccb";
+                }
+            }
+
+            function q1_answer_check() {
+                var text = document.getElementById("generated_answer");
+                var klose = document.getElementById('Klose');
+                var ronaldo = document.getElementById('Ronaldo');
+                var pele = document.getElementById('Pele')
+
+                if (klose.addEventListener("click")) {
+                    text.value += "correct";
+                }
+            }
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <h3> Which football player has scored the most world cup goals? </h3>
+                <button id = "klose" onclick = "button_color('klose', '#90ee90')" >Miroslav Klose</button>
+                <button id = "Ronaldo" onclick = "button_color('Ronaldo', '#ffcccb')">Ronaldo</button>
+                <button id = "Pele" onclick = "button_color('Pele', '#ffcccb')">Pele</button>
+                <p id = "generated_answer" value = "q1_answer_check()"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <h3> Which country has won the most world cups?</h3>
+                <input id = "answer"> </input>
+                <button id = "check" onclick = "check_answer()">Check Answer</button>
+
+            </div>
+
+        </div>
+    </body>
+</html>
