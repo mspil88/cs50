@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+
+<div>
+    <table style="width:100%">
+        <thead>
+            <tr>
+                <th>stock</th>
+                <th>company</th>
+                <th>shares</th>
+                <th>amount</th>
+                <th>date/ time</th>
+                <th>direction</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for hist in history %}
+                <tr>
+                    <td>{{hist.stock}}</td>
+                    <td>{{hist.company}}</td>
+                    <td>{{hist.shares}}</td>
+                    <td>${{hist.amount}}</td>
+                    <td>{{hist.datetime}}</td>
+                    <td>{{hist.direction}}</td>
+
+                </tr>
+                {% endfor %}
+
+        </tbody>
+
+    </table>
+
+
+</div>
+
+
+{% endblock %}

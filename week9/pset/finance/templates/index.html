@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+
+<div>
+    <table style="width:100%">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+                <tr>
+                    <td>{{stock.stock}}</td>
+                    <td>{{stock.company}}</td>
+                    <td>{{stock.shares}}</td>
+                    <td>${{stock.price}}</td>
+                    <td>${{stock.total}}</td>
+
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><b>${{grand_total}}</b></td>
+                </tr>
+
+        </tbody>
+
+    </table>
+
+
+</div>
+
+
+{% endblock %}
